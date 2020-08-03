@@ -1,29 +1,26 @@
 class UserController < ApplicationController
     use Rack::Flash
 
-    get '/user' do
-        @user = User.new
+    get '/signup' do
+        # @user = User.new
         erb :'/signup'
     end
 
-    # get '/login' do
-    #     @user = User.new
-    #     erb :login
+    # get '/user/homepage' do
+    #     # binding.pry
+    #     # raise session[:email].inspect
+    #     "You are logged in as #{session[:email]}"
     # end
 
-    # post '/user/homepage' do
-    #     "You are logged in as #{session[:user_id]}"
-    # end
-
-    post "/user" do
-    
-        @user = User.new(params[:user])
-        if @user.save
-          session[:user_id] = @user.id
-          redirect '/user/homepage'
-        else
-          redirect '/user/place_wager'
-        end
+    post "/signup" do
+        @user = User.new(email: params["email"], password: params["password"])
+        @user.save
+        session[:user_id] = @user.id
+        # binding.pry shows that user and all params are nil, why is this happening?
+        redirect '/user/homepage'
+        # else
+        #   redirect '/user/place_wager'
+        # end
         
     end
 
@@ -36,6 +33,7 @@ class UserController < ApplicationController
     end
 
     get '/user/homepage' do
+        current_user
         erb :'/user/homepage'
     end
 

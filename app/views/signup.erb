@@ -1,14 +1,19 @@
 <h1>Create Account</h1>
-<form action="/user" method="post">
+<form action="/signup" method="POST">
+  <br>
+  <div>
+    <label for="name">Username:</label>
+    <input type="text" name="name" id="name">
+  </div>
   <br>
   <div>
     <label for="email">Email:</label>
-    <input type="email" name="user[email]" id="email">
+    <input type="email" name="email" id="email">
   </div>
   <br>
   <div>
     <label for="password">Password:</label>
-    <input type="password" name="user[password]" id="password">
+    <input type="password" name="password" id="password">
   </div>
   <br>
   <input type="submit" value="Create Account">
