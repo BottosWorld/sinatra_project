@@ -2,7 +2,7 @@ class WagerController < ApplicationController
     use Rack::Flash
 
     get '/user/place_wager' do
-        if logged_in?
+        if !logged_in?
             redirect '/'
         else
             erb :'/user/place_wager'

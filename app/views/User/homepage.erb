@@ -1,1 +1,12 @@
-<h1>Welcome to your dashboard, <%=current_user%>!</h1>
+<h1>Welcome to your dashboard, <%=@user.email%>!</h1>
+
+    <div class="content">
+      <h3>User Stats</h3>
+      <p>Wins, losses, $ amount won/loss, streak, largest bet won, largest bet lost </p>
+    </div>
+
+    <div class="sidebar">
+      <p></p>
+      <p><a href="/user/place_wager">Place, edit, or delete a bet</a></p>
+      <p><a href="/live_bets">Active Bets</a></p>
+    </div>
