@@ -17,4 +17,8 @@ class WagerController < ApplicationController
         erb :'/user/live_bets'
     end
 
+    get '/live_bets' do
+        erb :'/user/live_bets'
+    end
+
 end
