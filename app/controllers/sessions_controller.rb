@@ -25,6 +25,11 @@ class SessionsController < ApplicationController
         end
       end
 
+    get '/sessions/logout' do
+        session.clear
+        redirect '/'
+    end
+
 
     # get '/user/homepage' do
     #     session[:email] = params[:email]
