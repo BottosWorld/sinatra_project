@@ -57,6 +57,7 @@ class WagerController < ApplicationController
         )
             redirect "/live_bets"
             # {@wager.id}
+            # performs the action of editing specific wager and showing the updated list of live bets
         else
             erb :'/user/edit_wager'
         end
@@ -66,6 +67,7 @@ class WagerController < ApplicationController
         set_wager
         if current_user == @wager.user
             erb :'/user/delete'
+            # gets wager attributes from list of live bets for current user and gives the user an option to delete that wager
         else
             redirect '/'
         end
@@ -75,6 +77,7 @@ class WagerController < ApplicationController
         set_wager
         if current_user == @wager.user
           @wager.destroy
+          # performs the action of deleting the selected wager created by it's owner, the user, and redirects to show an updated list of live bets
         end
         redirect '/live_bets'
       end
@@ -82,7 +85,7 @@ class WagerController < ApplicationController
 
     # CRUD controller
     # Bets get pushed to active bets page where user can view all bets
-    # User should also be able to edit and delete their own bets
+    # User can also edit and delete their own bets in live bets view
 
     private
     def set_wager
