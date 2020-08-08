@@ -5,7 +5,9 @@
     <br>
     <div>
         <% @wager.each do |wager| %>
+            <%# <div class="sidebar"> %>
             <p><label for="id"><%= wager.id %>. </label><a href="/live_bets/<%= wager.id %>"><%= wager.bet %> for $<%= wager.amount %></a></p>
+            <p><a href='/live_bets/<%=wager.id%>/delete'>Delete Bet</a></p>
         <% end %>
     </div>
     <br>

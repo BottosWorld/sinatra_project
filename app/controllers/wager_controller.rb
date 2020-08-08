@@ -62,6 +62,23 @@ class WagerController < ApplicationController
         end
     end
 
+    get '/live_bets/:id/delete' do
+        set_wager
+        if current_user == @wager.user
+            erb :'/user/delete'
+        else
+            redirect '/'
+        end
+    end
+
+    delete '/live_bets/:id' do
+        set_wager
+        if current_user == @wager.user
+          @wager.destroy
+        end
+        redirect '/live_bets'
+      end
+
 
     # CRUD controller
     # Bets get pushed to active bets page where user can view all bets

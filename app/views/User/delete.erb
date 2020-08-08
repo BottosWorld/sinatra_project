@@ -1,0 +1,13 @@
+<h1>Are you sure you want to delete the following bet?</h1>
+<h3> <%= @wager.bet %> for $<%= @wager.amount %> </h3>
+<br>
+<div>
+    <form action='/live_bets/<%=@wager.id%>' method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete this Bet!">
+    </form>
+</div>
+<br>
+<div>
+    <a href="/user/homepage">Return Home</a>
+</div>
