@@ -14,6 +14,13 @@ class WagerController < ApplicationController
         erb :'/user/homepage'
     end
 
+    get '/all_bets' do
+        @wager = Wager.all
+        @user = User.all
+        erb :'/all_bets'
+    end
+
+
     post '/user/live_bets' do
         @pendingbet = current_user.wagers.build(params[:wager])
         if @pendingbet.save
