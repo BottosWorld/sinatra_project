@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-    has_many :active_bets
-    has_many :pending_bets
+    # has_many :active_bets
+    has_many :wagers
     belongs_to :master
     
     

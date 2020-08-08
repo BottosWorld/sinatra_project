@@ -1,8 +1,10 @@
 <h1>Live Bets</h1>
-    <p>Here is a list of your active bets:</p>
+    <h3>Here is a list of your active bets:</h3>
     <br>
     <div>
-        <p>Placeholder for list of bets</p>
+        <% @wager.each do |wager| %>
+            <p><a href="/live_bets/<%= wager.id %>"><%= wager.bet %> for $<%= wager.amount %></a></p>
+        <% end %>
     </div>
     <br>
     <div>

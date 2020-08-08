@@ -24,13 +24,13 @@ class UserController < ApplicationController
         
     end
 
-    get '/user/user_stats' do
-        erb :'/user/user_stats'
-    end
+    # get '/user/user_stats' do
+    #     erb :'/user/user_stats'
+    # end
 
-    get '/user/live_bets' do
-        erb :'/user/live_bets'
-    end
+    # get '/user/live_bets' do
+    #     erb :'/user/live_bets'
+    # end
 
     get '/user/homepage' do
         current_user
