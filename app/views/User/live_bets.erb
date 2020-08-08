@@ -1,9 +1,11 @@
-<h1>Live Bets</h1>
-    <h3>Here is a list of your active bets:</h3>
+<%# This is my show.erb view renamed to live_bets.erb (live bets for current user are read here) %>
+
+<h1>Here is a List of <%=@user.email%>'s Live Bets</h1>
+    <h3>Click on any bet to make changes before gametime:</h3>
     <br>
     <div>
         <% @wager.each do |wager| %>
-            <p><a href="/live_bets/<%= wager.id %>"><%= wager.bet %> for $<%= wager.amount %></a></p>
+            <p><label for="id"><%= wager.id %>. </label><a href="/live_bets/<%= wager.id %>"><%= wager.bet %> for $<%= wager.amount %></a></p>
         <% end %>
     </div>
     <br>
