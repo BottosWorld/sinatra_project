@@ -7,3 +7,9 @@
     <p>Dollar Amount: <input type="integer" name="wager[amount]" id="amount"></p>
     <input type="submit" value="Place Bet">
 </form>
+
+  <div class="container">
+    <h3>Here is a look at today's schedule:</h3>
+
+    <%= @sportsdata.daily_baseball %>
+  </div>

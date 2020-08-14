@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    @api = DailySchedule::API.new
+    mlb_schedule
     erb :welcome
   end
 
@@ -26,6 +26,10 @@ class ApplicationController < Sinatra::Base
 
     def logged_in?
       !!current_user
+    end
+
+    def mlb_schedule
+      @sportsdata = DailySchedule::API.new
     end
   end
 

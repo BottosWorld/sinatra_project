@@ -6,6 +6,7 @@ class WagerController < ApplicationController
             redirect '/'
         else
             @wager = Wager.new
+            mlb_schedule
             erb :'/user/place_wager'
         end
     end
