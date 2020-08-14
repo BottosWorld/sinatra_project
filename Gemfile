@@ -13,6 +13,8 @@ gem 'bcrypt'
 gem 'tux'
 gem 'dotenv'
 gem 'rack-flash3'
+gem "rest-client"
+gem "json"
 
 group :test do
   gem 'rspec'
