@@ -1,15 +1,41 @@
 <%# This view is my new.erb renamed to place_wager (wagers are created here) %>
+<body>
+    <div class"=wrapper">
+        <nav class="green darken">
+            <ul class="right">
+                <% if logged_in? %>
+                    <li><%= current_user.email %></li>
+                    <li><a href="/user/homepage">Homepage</a>
+                <% end %>
+            </ul>
+        </nav>
+    </div>
+     
 
-<h1>Please place your wager below</h1>
 
-<form action="/user/live_bets" method="Post">
-    <p>Wager: <input type="text" name="wager[bet]" id="bet"></p>
-    <p>Dollar Amount: <input type="integer" name="wager[amount]" id="amount"></p>
-    <input type="submit" value="Place Bet">
-</form>
 
-  <div class="container">
-    <h3>Here is a look at today's schedule:</h3>
+    <h1>Please place your wager below</h1>
 
-    <%= @sportsdata.daily_baseball %>
-  </div>
+    <form action="/user/live_bets" method="Post">
+        <p>Wager: <input type="text" name="wager[bet]" id="bet"></p>
+        <p>Dollar Amount: <input type="integer" name="wager[amount]" id="amount"></p>
+        <input type="submit" value="Place Bet">
+    </form>
+
+    <div class="container">
+        
+        <h3>Here is a look at today's schedule:</h3>
+
+        
+            <div class="row">
+            <div class="row"><%=@sportsdata.daily_baseball.map {|datetime| datetime.values}%></div>
+                    <%# <% @sportsdata.daily_baseball.each do |game| %>
+                        <div class="row"><%= @sportsdata.daily_baseball.map {|x| x.keys}.uniq %></div>
+                        <div class="row"><%= @sportsdata.daily_baseball.map {|x| x.values[1]} %> VS. <%= @sportsdata.daily_baseball.map {|x| x.values[2]} %></div>
+                    <%# <% end %>
+            </div>
+        
+
+    </div>
+
+</body>    

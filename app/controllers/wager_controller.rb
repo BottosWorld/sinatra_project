@@ -7,6 +7,7 @@ class WagerController < ApplicationController
         else
             @wager = Wager.new
             mlb_schedule
+            # @datetime = DailySchedule::Mlb.datetime
             erb :'/user/place_wager'
         end
     end

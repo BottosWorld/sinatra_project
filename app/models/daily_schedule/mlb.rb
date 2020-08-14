@@ -32,4 +32,8 @@ class DailySchedule::Mlb
         @@all
     end
 
+    # def self.datetime
+    #     @datetime
+    # end
+
 end
