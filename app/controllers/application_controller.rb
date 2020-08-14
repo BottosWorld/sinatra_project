@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    @api = DailySchedule::API.new
     erb :welcome
   end
 
