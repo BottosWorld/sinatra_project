@@ -38,5 +38,23 @@
   <div class="container">
     <h3>Here is a look at today's schedule:</h3>
 
-    <%= @sportsdata.daily_baseball %>
+    <% @sportsdata.daily_baseball.each do |game| %>
+    <div>
+      <%# <li><%= game[:DateTime] %>
+      <li><%= game[:awayteam] %> | <%= game[:AwayTeamMoneyLine] %> | Runs: <%= game[:AwayTeamRuns] %></li>
+      vs.
+      <li><%= game[:HomeTeam] %> | <%= game[:HomeTeamMoneyLine] %> | Runs: <%= game[:HomeTeamRuns] %></li>
+      <p>Inning: <%= game[:Inning]%></p>
+      <br>
+      <br>
+    </div>
+
+
+    <% end %>
+    <%# <%= game_one %>
   </div>
+
+
+   <%# <% @wager.each do |wager| %>
+            <%# <p><%= wager.bet for $<%= wager.amount %>
+        <%# <% end %>

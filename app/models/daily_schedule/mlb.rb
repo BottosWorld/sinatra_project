@@ -2,7 +2,7 @@ class DailySchedule::Mlb
     # < ActiveRecord::Base
     # has_many :apis
     
-    attr_accessor :DateTime, :AwayTeam, :HomeTeam, :Inning, :InningHalf, :AwayTeamRuns, :HomeTeamRuns, :PointSpread, :OverUnder, :AwayTeamMoneyLine, :HomeTeamMoneyLine
+    attr_accessor :DateTime, :awayteam, :HomeTeam, :Inning, :InningHalf, :AwayTeamRuns, :HomeTeamRuns, :PointSpread, :OverUnder, :AwayTeamMoneyLine, :HomeTeamMoneyLine
 
     @@all = []
 
@@ -34,6 +34,10 @@ class DailySchedule::Mlb
 
     # def self.datetime
     #     @datetime
+    # end
+
+    # def self.awayteam
+    #     @awayteam
     # end
 
 end

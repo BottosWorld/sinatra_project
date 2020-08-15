@@ -19,7 +19,7 @@ class DailySchedule::API
             json.each do |hash|
                 baseball_hash = {}
                 baseball_hash[:DateTime] = hash["DateTime"]
-                baseball_hash[:AwayTeam] = hash["AwayTeam"]
+                baseball_hash[:awayteam] = hash["AwayTeam"]
                 baseball_hash[:HomeTeam] = hash["HomeTeam"]
                 baseball_hash[:Inning] = hash["Inning"].to_i
                 baseball_hash[:InningHalf] = hash["InningHalf"]

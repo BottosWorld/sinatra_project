@@ -31,6 +31,14 @@ class ApplicationController < Sinatra::Base
     def mlb_schedule
       @sportsdata = DailySchedule::API.new
     end
+
+    # def game_one
+    #   mlb_schedule
+    #   @sportsdata.daily_baseball.map |awayteam| do
+        
+    #   end
+    # end
   end
+
 
 end
