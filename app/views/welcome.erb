@@ -6,7 +6,7 @@
     <div class="content">
       <p>Welcome to Botto's Sportsbook!</p>
       <p>Our daily MLB schedule below is supported by <a href="https://SportsData.io" target="_blank">SportsData</a> and our preferred betting partners are DraftKings and Fanduel.</p>
-      <%= Date.today.strftime("%Y-%b-%e") %>
+      <%= Date.today.strftime("%Y-%b-%d") %>
     </div>
 
     <div class="sidebar">
@@ -36,7 +36,7 @@
   <br>
 
   <div class="container">
-    <h3>Here is a look at today's schedule:</h3>
+    <h3>Here is a look at the schedule for <%=Date.today.next_month.strftime("%b-%d-%Y")%>:</h3>
 
     <% @sportsdata.daily_baseball.each do |game| %>
     <div>
