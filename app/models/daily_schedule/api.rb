@@ -8,7 +8,7 @@ class DailySchedule::API
 
     def initialize
         @api_key = "?key=2d27b767db0a475094b84f2f583e8de0"
-        @date = "#{Date.today.next_month.strftime("%Y-%b-%d")}"
+        @date = "#{Date.today.strftime("%Y-%b-%d")}"
         @url = "https://api.sportsdata.io/v3/mlb/scores/json/GamesByDate/"
     end
 
